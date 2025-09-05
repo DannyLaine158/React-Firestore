@@ -1,4 +1,4 @@
-function MessageItem({ msg, user }) {
+function MessageItem({ msg, user, darkMode }) {
     const formatTime = (timeStamp) => {
         if (!timeStamp) return '';
         const date = timeStamp.toDate();
@@ -14,8 +14,12 @@ function MessageItem({ msg, user }) {
                 msg.uid === user.uid ? "justify-end" : "justify-start"
             }`}
         >
-            <div className="max-w-xs bg-white p-2 rounded shadow text-sm">
-                <div className="flex items-center mb-1">
+            <div className={`max-w-xs bg-white p-2 rounded shadow text-sm
+                ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
+                <div className={`
+                    flex items-center mb-1
+                    ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}
+                    `}>
                     <img
                         className="w-5 h-5 rounded-full mr-2"
                         src={msg.photoURL} 
