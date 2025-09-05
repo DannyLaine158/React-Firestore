@@ -98,19 +98,21 @@ function Chat() {
                 ${darkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black"}
                 `}
             >
-                <UserList onlineUsers={onlineUsers} onLogout={handleLogout} />
+                <UserList onlineUsers={onlineUsers} onLogout={handleLogout} 
+                    darkMode={darkMode} />
             </aside>
 
             {/* Contenido principal */}
             <main
-                className={`flex-1 flex flex-col bg-gray-100 transition-all duration-300
+                className={`flex-1 flex flex-col transition-all duration-300
                 ${showSideBar ? "md:ml-64" : "ml-0 w-full"}
-                ${darkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black"}
+                ${darkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-black"}
                 `}
             >
                 <MessageList messages={messages} user={user} chatEndRef={chatEndRef}
                     darkMode={darkMode} />
-                <MessageForm text={text} setText={setText} onSend={handleSend} />
+                <MessageForm text={text} setText={setText} onSend={handleSend}
+                    darkMode={darkMode} />
             </main>
         </div>
 

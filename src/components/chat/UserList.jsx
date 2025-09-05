@@ -1,7 +1,8 @@
-function UserList({ onlineUsers, onLogout }) {
+function UserList({ onlineUsers, onLogout, darkMode }) {
     return (
         <>
-        <aside className="w-64 bg-gray-200 p-4 overflow-y-auto">
+        <aside className={`w-64 bg-gray-200 p-4 overflow-y-auto
+            ${darkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black"}`}>
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Usuarios conectados</h2>
                 <button onClick={onLogout}
