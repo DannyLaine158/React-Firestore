@@ -6,7 +6,7 @@ function UserList({ onlineUsers, onLogout, darkMode }) {
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Usuarios conectados</h2>
                 <button onClick={onLogout}
-                    className="bg-red-500 text-white px-2 py-1 rounded 
+                    className="bg-red-500 text-white px-2 py-1 rounded mr-3
                     text-sm hover:bg-red-600 cursor-pointer"
                 >Salir</button>
             </div>
